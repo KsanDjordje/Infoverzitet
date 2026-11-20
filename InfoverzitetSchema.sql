@@ -79,6 +79,10 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`student` (
   `idRegistrovanKorisnik` INT NOT NULL,
+  `ime` VARCHAR(45) NOT NULL,
+  `prezime` VARCHAR(45) NOT NULL,
+  `grad_stanovanja` VARCHAR(45) NOT NULL,
+  `fakultet` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idRegistrovanKorisnik`),
   CONSTRAINT `fk_Student_ObicanKorisnik`
     FOREIGN KEY (`idRegistrovanKorisnik`)
@@ -139,6 +143,10 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`poslovnikorisnik` (
   `idRegistrovanKorisnik` INT NOT NULL,
+  `ime_kompanije` VARCHAR(120) NOT NULL,
+  `adresa_kompanije` VARCHAR(120) NOT NULL,
+  `JIB` VARCHAR(12) NOT NULL,
+  `djelatnost` VARCHAR(120) NOT NULL,
   PRIMARY KEY (`idRegistrovanKorisnik`),
   CONSTRAINT `fk_PoslovniKorisnik_ObicanKorisnik`
     FOREIGN KEY (`idRegistrovanKorisnik`)
