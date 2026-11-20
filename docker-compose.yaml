@@ -1,0 +1,18 @@
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: ultraJakaLozinka123 
+      MARIADB_DATABASE: mydb
+      MARIADB_USER: root
+      MARIADB_PASSWORD: ultraJakaLozinka123 
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+volumes:
+  mariadb_data:
